@@ -186,8 +186,3 @@ sudo nginx -t && sudo systemctl reload nginx
 | `GET` | `/api/file/{id}` | İşlenmiş medyanın istemciye aktarılması (10 dk sonra otomatik silinir) |
 | `POST` | `/api/compress-pdf` | Sunucu taraflı saf Python tabanlı (`pypdf`) PDF sıkıştırma |
 
----
-
-## Lisans
-
-Bu proje **MIT Lisansı** ile lisanslanmıştır. Detaylar için `LICENSE` dosyasına göz atabilirsiniz.
