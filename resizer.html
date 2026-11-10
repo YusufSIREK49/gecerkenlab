@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akıllı Downscaler | BTÜ Geçerken Lab</title>
+  <meta name="description" content="Görsel, video ve PDF boyutlarını kaliteyi optimize ederek en küçük dosya boyutuna indirin.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23009B77'/%3E%3Cpath fill='%23ffffff' d='M7 2v2h1v5l-4.22 8.44C3.26 18.48 4 20 5.24 20h13.52c1.24 0 1.98-1.52 1.46-2.56L16 9V4h1V2H7zm3 2h4v5.5l1.5 3H8.5L10 9.5V4z'/%3E%3Ccircle cx='10.5' cy='16.5' r='1.2' fill='%2340E0D0'/%3E%3Ccircle cx='13.5' cy='15' r='0.9' fill='%2340E0D0'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Serif+TR:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="labsnavbar.css">
+  <link rel="stylesheet" href="labs.css">
+</head>
+<body>
+
+  <div id="lab-navbar-root"></div>
+
+  <main class="lab-shell">
+    <div class="lab-workspace-card">
+      <div class="lab-workspace-header">
+        <div>
+          <span class="section-label">Araç 01 // Boyut &amp; Sıkıştırma</span>
+          <h2 class="lab-tool-heading">Akıllı <em>Downscaler</em></h2>
+        </div>
+        <span class="lab-head-pill"><i class="fa-solid fa-compress"></i> Görsel, Video &amp; PDF</span>
+      </div>
+
+      <div class="lab-split-workspace">
+        <div class="lab-dropzone" id="resizerDropzone">
+          <input type="file" id="resizerFileInput" accept="image/*,video/mp4,video/quicktime,video/x-matroska,application/pdf,.svg" hidden>
+          <div class="dropzone-center">
+            <div class="drop-circle"><i class="fa-solid fa-cloud-arrow-down"></i></div>
+            <p class="drop-lead" id="resizerDropLead">Küçültülecek dosyayı yükleyin</p>
+            <span class="drop-hint">Görsel (JPG, PNG, WebP), Video (MP4, MOV) veya PDF</span>
+            <span class="drop-badge">Maksimum Boyut Tasarrufu</span>
+          </div>
+          <div class="dropzone-preview" id="resizerPreviewWrap" style="display:none;">
+            <img id="resizerImgPreview" src="" alt="Önizleme" style="display:none;">
+            <div id="resizerMediaInfo" style="display:none; text-align:center; padding:20px;">
+              <i class="fa-solid fa-file fa-3x" style="color:var(--emerald);"></i>
+              <p id="resizerFileName" style="margin-top:10px; font-weight:700; font-family:'Syne',sans-serif;"></p>
+            </div>
+            <button type="button" class="btn-clear-file" id="resizerClearBtn" title="Dosyayı Kaldır">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="lab-controls-pane">
+          <h4 class="pane-title"><i class="fa-solid fa-sliders"></i> Küçültme Ayarları</h4>
+
+          <div id="downscaleImageParams">
+            <div class="input-duo">
+              <div class="input-group">
+                <label for="resizerWidth">Hedef Genişlik (px)</label>
+                <input type="number" id="resizerWidth" placeholder="Örn: 1920">
+              </div>
+              <div class="input-group">
+                <label for="resizerHeight">Hedef Yükseklik (px)</label>
+                <input type="number" id="resizerHeight" placeholder="Örn: 1080">
+              </div>
+            </div>
+            <div class="preset-chips" style="margin-top:10px;">
+              <button type="button" class="chip-btn" data-ratio="0.5">%50 Küçült</button>
+              <button type="button" class="chip-btn" data-ratio="0.25">%75 Küçült</button>
+              <button type="button" class="chip-btn" data-w="1080" data-h="1080">Instagram Kare</button>
+            </div>
+          </div>
+
+          <div id="downscaleVideoParams" style="display:none;">
+            <div class="input-group">
+              <label for="videoDownTarget">Hedef Video Çözünürlüğü</label>
+              <select id="videoDownTarget" class="lab-select">
+                <option value="1080">1080p FHD (Sosyal Medya Standardı)</option>
+                <option value="720">720p HD (Hızlı Paylaşım)</option>
+                <option value="480">480p SD (Maksimum Veri Tasarrufu)</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="downscalePdfParams" style="display:none;">
+            <div class="input-group">
+              <label for="pdfCompressionLevel">PDF Sıkıştırma Seviyesi</label>
+              <select id="pdfCompressionLevel" class="lab-select">
+                <option value="medium">Standart Sıkıştırma (150 DPI - E-posta İçin İdeal)</option>
+                <option value="high">Yüksek Sıkıştırma (72 DPI - En Küçük Dosya)</option>
+                <option value="low">Düşük Sıkıştırma (300 DPI - Baskı Kalitesi Korunur)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="action-footer">
+            <button type="button" class="btn-primary w-100" id="resizerProcessBtn">
+              <i class="fa-solid fa-compress"></i> Optimize Et &amp; İndir
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="lab-footer-root"></div>
+  <div id="labToastContainer" class="lab-toast-container"></div>
+
+  <!-- Ortak Sistemler -->
+  <script src="labsnavbar.js"></script>
+  <script src="labsfooter.js"></script>
+  <script src="labs-core.js"></script>
+
+  <!-- Yalnızca Bu Aracın Modülü -->
+  <script type="module">
+    import { initResizerModule } from './modules/resizer.js';
+    document.addEventListener('DOMContentLoaded', initResizerModule);
+  </script>
+</body>
+</html>

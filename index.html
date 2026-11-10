@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTÜ Geçerken | Lab</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23009B77'/%3E%3Cpath fill='%23ffffff' d='M7 2v2h1v5l-4.22 8.44C3.26 18.48 4 20 5.24 20h13.52c1.24 0 1.98-1.52 1.46-2.56L16 9V4h1V2H7zm3 2h4v5.5l1.5 3H8.5L10 9.5V4z'/%3E%3Ccircle cx='10.5' cy='16.5' r='1.2' fill='%2340E0D0'/%3E%3Ccircle cx='13.5' cy='15' r='0.9' fill='%2340E0D0'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Serif+TR:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="labsnavbar.css">
+  <link rel="stylesheet" href="labs.css">
+</head>
+<body>
+
+  <div id="lab-navbar-root"></div>
+
+  <main class="lab-shell">
+    
+    <!-- GENEL BAKIŞ / VİTRİN -->
+    <section class="lab-section active">
+      <div class="lab-welcome-banner">
+        <div class="welcome-brand">
+          <img src="https://cdn1.site-media.eu/images/114/22934790/GeerkenLogo-Photoroom-82aMDiSMSNM52OeysD1XRQ-EgWrwxwoIVNv8WhyNw0qWA.png" alt="BTÜ Geçerken Logo" class="welcome-logo">
+          <div class="welcome-text">
+            <div class="welcome-title-row">
+              <h2>BTÜ Geçerken Labs <em>Yayında!</em></h2>
+              <span class="welcome-beta-badge">BETA</span>
+            </div>
+            <p>Hızlı görsel işleme, yerel format dönüştürme ve evrensel medya motoru arayüzü.</p>
+          </div>
+        </div>
+
+        <div class="welcome-actions">
+          <a href="https://btugecerken.com" target="_blank" rel="noopener noreferrer" class="btn-welcome-link site-link">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>Ana Site</span>
+          </a>
+          <a href="https://github.com/btugecerken" target="_blank" rel="noopener noreferrer" class="btn-welcome-link gh-link">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub Repo</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lab-grid-cards">
+        <!-- 1. RESIZER -->
+        <a href="resizer.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-compress"></i></div>
+            <span class="lab-tool-tag">Boyut &amp; Sıkıştırma</span>
+          </div>
+          <h3 class="lab-card-title">Akıllı Downscaler</h3>
+          <p class="lab-card-desc">Görselleri, 4K videoları ve büyük PDF dosyalarını optimize ederek en küçük boyuta indirin.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 2. CONVERTER -->
+        <a href="converter.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-file-export"></i></div>
+            <span class="lab-tool-tag">Evrensel Motor</span>
+          </div>
+          <h3 class="lab-card-title">Format Dönüştürücü</h3>
+          <p class="lab-card-desc">Görseller, Vektör/SVG, PDF ve Ses dosyaları arasında otomatik tür algılama ile dönüşüm sağlayın.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 3. BG REMOVER -->
+        <a href="bg-remover.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-scissors"></i></div>
+            <span class="lab-tool-tag">Segmentasyon</span>
+          </div>
+          <h3 class="lab-card-title">AI Arka Plan Temizleyici</h3>
+          <p class="lab-card-desc">Portre ve nesne fotoğraflarının arka planını yapay zeka ile şeffaflaştırıp kayıpsız PNG olarak dışa aktarın.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 4. UPSCALER -->
+        <a href="upscaler.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <span class="lab-tool-tag">Derin Öğrenme</span>
+          </div>
+          <h3 class="lab-card-title">AI Çözünürlük Artırıcı</h3>
+          <p class="lab-card-desc">2x ve 4x yapay zeka modelleriyle fotoğrafları, videoları ve taranmış PDF sayfalarını netleştirip onarın.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 5. DOWNLOADER -->
+        <a href="downloader.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-cloud-arrow-down"></i></div>
+            <span class="lab-tool-tag">Medya Akışı</span>
+          </div>
+          <h3 class="lab-card-title">Evrensel Medya İndirici</h3>
+          <p class="lab-card-desc">YouTube Shorts, Instagram Reels ve X platformlarındaki video linklerini analiz edin; MP4 veya MP3 kaydedin.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 6. PDF MERGE -->
+        <a href="pdf-merge.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-object-group"></i></div>
+            <span class="lab-tool-tag">PDF Stüdyosu</span>
+          </div>
+          <h3 class="lab-card-title">PDF Birleştirici</h3>
+          <p class="lab-card-desc">Birden fazla PDF belgesini dilediğiniz sıraya dizerek tek bir PDF dosyasında birleştirin.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 7. PDF SPLIT -->
+        <a href="pdf-split.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-scissors"></i></div>
+            <span class="lab-tool-tag">PDF Stüdyosu</span>
+          </div>
+          <h3 class="lab-card-title">PDF Sayfa Ayırıcı</h3>
+          <p class="lab-card-desc">Büyük PDF dosyalarındaki belirli sayfaları veya aralıkları ayıklayıp ayrı bir PDF olarak kaydedin.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 8. IMG TO PDF -->
+        <a href="img-to-pdf.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-images"></i></div>
+            <span class="lab-tool-tag">PDF Stüdyosu</span>
+          </div>
+          <h3 class="lab-card-title">Görselden PDF</h3>
+          <p class="lab-card-desc">JPG, PNG ve WebP formatındaki resimleri tek tıkla yüksek çözünürlüklü bir PDF albümüne dönüştürün.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 9. BATCH WEBP -->
+        <a href="batch-webp.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-bolt"></i></div>
+            <span class="lab-tool-tag">Görsel &amp; AI</span>
+          </div>
+          <h3 class="lab-card-title">Toplu WebP Dönüştürücü</h3>
+          <p class="lab-card-desc">Onlarca görseli web standartlarında ultra hafif WebP formatına kayıpsız dönüştürün ve ZIP olarak indirin.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 10. SVG OPT -->
+        <a href="svg-opt.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-bezier-curve"></i></div>
+            <span class="lab-tool-tag">Görsel &amp; AI</span>
+          </div>
+          <h3 class="lab-card-title">SVG Optimizer</h3>
+          <p class="lab-card-desc">Vektör dosyalarındaki gereksiz metadata, XML etiketleri ve boşlukları temizleyerek dosya boyutunu küçültün.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 11. ICO MAKER -->
+        <a href="ico-maker.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-icons"></i></div>
+            <span class="lab-tool-tag">Görsel &amp; AI</span>
+          </div>
+          <h3 class="lab-card-title">Favicon &amp; ICO Paketi</h3>
+          <p class="lab-card-desc">Logonuzdan 16x16, 32x32, 48x48 ve 64x64 boyutlarında çoklu favicon paketi oluşturun.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 12. QR MAKER -->
+        <a href="qr-maker.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-qrcode"></i></div>
+            <span class="lab-tool-tag">Pratik Araçlar</span>
+          </div>
+          <h3 class="lab-card-title">QR Kod Oluşturucu</h3>
+          <p class="lab-card-desc">Özel renkli, yüksek çözünürlüklü ve vektörel SVG/PNG formatlarında QR kodlar üretin.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 13. EXIF CLEANER -->
+        <a href="exif-cleaner.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <span class="lab-tool-tag">Pratik Araçlar</span>
+          </div>
+          <h3 class="lab-card-title">EXIF &amp; Meta Temizleyici</h3>
+          <p class="lab-card-desc">Fotoğraflardaki konum (GPS), cihaz modeli ve çekim tarihi gibi gizli meta verileri tek tıkla silin.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 14. BULK RENAME -->
+        <a href="bulk-rename.html" class="lab-card" style="text-decoration:none; color:inherit;">
+          <div class="lab-card-top">
+            <div class="lab-card-icon"><i class="fa-solid fa-i-cursor"></i></div>
+            <span class="lab-tool-tag">Pratik Araçlar</span>
+          </div>
+          <h3 class="lab-card-title">Toplu Yeniden Adlandırıcı</h3>
+          <p class="lab-card-desc">Yüzlerce dosyanın adını ön ek, son ek veya sayaç kurallarına göre düzenleyip topluca ZIP olarak paketleyin.</p>
+          <div class="lab-card-action"><span>Aracı Çalıştır</span><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="lab-footer">
+    <div class="lab-footer-inner">
+      <div class="lab-footer-brand">
+        <i class="fa-solid fa-microchip" style="color: var(--emerald); font-size: 18px;"></i>
+        <p>
+          BTÜ Geçerken Topluluğu resmi araç ekosistemi.
+        </p>
+      </div>
+      <div class="lab-footer-copy">
+        <span>&copy; 2026 BTÜ Geçerken Labs.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="labToastContainer" class="lab-toast-container"></div>
+
+  <!-- Ortak Scriptler -->
+  <script src="labsnavbar.js"></script>
+  <script src="labs-core.js"></script>
+</body>
+</html>

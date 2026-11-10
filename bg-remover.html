@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Arka Plan Temizleyici | BTÜ Geçerken Lab</title>
+  <meta name="description" content="Portre ve ürün fotoğraflarının arka planını yapay zeka ile şeffaflaştırıp kayıpsız PNG olarak dışa aktarın.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23009B77'/%3E%3Cpath fill='%23ffffff' d='M7 2v2h1v5l-4.22 8.44C3.26 18.48 4 20 5.24 20h13.52c1.24 0 1.98-1.52 1.46-2.56L16 9V4h1V2H7zm3 2h4v5.5l1.5 3H8.5L10 9.5V4z'/%3E%3Ccircle cx='10.5' cy='16.5' r='1.2' fill='%2340E0D0'/%3E%3Ccircle cx='13.5' cy='15' r='0.9' fill='%2340E0D0'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Serif+TR:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="labsnavbar.css">
+  <link rel="stylesheet" href="labs.css">
+</head>
+<body>
+
+  <div id="lab-navbar-root"></div>
+
+  <main class="lab-shell">
+    <div class="lab-workspace-card">
+      <div class="lab-workspace-header">
+        <div>
+          <span class="section-label">Araç 03 // Görsel Ayrıştırma &amp; Şeffaflık</span>
+          <h2 class="lab-tool-heading">AI <em>Arka Plan Temizleyici</em></h2>
+        </div>
+        <span class="lab-head-pill"><i class="fa-solid fa-scissors"></i> Yerel Wasm &amp; Şeffaf PNG</span>
+      </div>
+
+      <div class="lab-split-workspace">
+        <div class="lab-dropzone" id="bgDropzone">
+          <input type="file" id="bgFileInput" accept="image/*" hidden>
+          <div class="dropzone-center">
+            <div class="drop-circle"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <p class="drop-lead">Arka planı silinecek görseli yükleyin</p>
+            <span class="drop-hint">Portreler, ürünler veya nesneler</span>
+            <span class="drop-badge">Kayıpsız PNG Çıktısı</span>
+          </div>
+          <div class="dropzone-preview lab-checkerboard-wrap" id="bgPreviewWrap" style="display:none;">
+            <img id="bgImgPreview" src="" alt="Önizleme">
+            <button type="button" class="btn-clear-file" id="bgClearBtn" title="Görseli Kaldır">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="lab-controls-pane">
+          <h4 class="pane-title"><i class="fa-solid fa-sliders"></i> İşleme &amp; Dışa Aktarma</h4>
+          <p class="pane-note">Yapay zeka modeli tarayıcıda doğrudan çalışır, görsel sunucuya iletilmeden gizlilik korunarak işlenir.</p>
+          
+          <div class="action-footer">
+            <button type="button" class="btn-primary w-100" id="bgProcessBtn">
+              <i class="fa-solid fa-eraser"></i> Arka Planı Temizle
+            </button>
+            <button type="button" class="btn-download-opt w-100" id="bgDownloadBtn" style="display: none; margin-top: 10px; justify-content: center;">
+              <i class="fa-solid fa-download"></i> Şeffaf PNG İndir
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="lab-footer-root"></div>
+  <div id="labToastContainer" class="lab-toast-container"></div>
+
+  <!-- Ortak Sistemler -->
+  <script src="labsnavbar.js"></script>
+  <script src="labsfooter.js"></script>
+  <script src="labs-core.js"></script>
+
+  <!-- Yalnızca Bu Aracın Modülü -->
+  <script type="module">
+    import { initBgRemoverModule } from './modules/bg-remover.js';
+    document.addEventListener('DOMContentLoaded', initBgRemoverModule);
+  </script>
+</body>
+</html>

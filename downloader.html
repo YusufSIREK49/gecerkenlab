@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evrensel Medya İndirici | BTÜ Geçerken Lab</title>
+  <meta name="description" content="YouTube Shorts, Instagram Reels ve X videolarını analiz edin; MP4 veya MP3 formatında indirin.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23009B77'/%3E%3Cpath fill='%23ffffff' d='M7 2v2h1v5l-4.22 8.44C3.26 18.48 4 20 5.24 20h13.52c1.24 0 1.98-1.52 1.46-2.56L16 9V4h1V2H7zm3 2h4v5.5l1.5 3H8.5L10 9.5V4z'/%3E%3Ccircle cx='10.5' cy='16.5' r='1.2' fill='%2340E0D0'/%3E%3Ccircle cx='13.5' cy='15' r='0.9' fill='%2340E0D0'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Serif+TR:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="labsnavbar.css">
+  <link rel="stylesheet" href="labs.css">
+</head>
+<body>
+
+  <div id="lab-navbar-root"></div>
+
+  <main class="lab-shell">
+    <div class="lab-workspace-card">
+      <div class="lab-workspace-header">
+        <div>
+          <span class="section-label">Araç 05 // Akış Analizi</span>
+          <h2 class="lab-tool-heading">Evrensel <em>Medya İndirici</em></h2>
+        </div>
+        <div class="supported-icons">
+          <span class="badge-social"><i class="fa-brands fa-youtube"></i> YouTube / Shorts</span>
+          <span class="badge-social"><i class="fa-brands fa-instagram"></i> Reels</span>
+          <span class="badge-social"><i class="fa-brands fa-x-twitter"></i> X</span>
+        </div>
+      </div>
+
+      <div class="downloader-wrap">
+        <div class="downloader-search-bar">
+          <div class="search-input-box">
+            <i class="fa-solid fa-link input-icon"></i>
+            <input type="url" id="mediaUrlInput" placeholder="https://www.youtube.com/watch?v=... veya Instagram/X linki yapıştırın">
+          </div>
+          <button type="button" class="btn-primary" id="analyzeUrlBtn">
+            <i class="fa-solid fa-magnifying-glass"></i> Analiz Et
+          </button>
+        </div>
+
+        <div class="downloader-result-card" id="downloaderResult" style="display:none;">
+          <div class="result-thumb-box">
+            <img id="downloaderThumb" src="" alt="Thumbnail">
+          </div>
+          <div class="result-body">
+            <span class="result-platform" id="downloaderPlatform">YouTube</span>
+            <h4 class="result-title" id="downloaderTitle">Örnek Video Başlığı</h4>
+            <p class="result-author" id="downloaderAuthor">Kanal Adı</p>
+
+            <div class="download-actions-grid">
+              <button type="button" class="btn-download-opt" data-format="1080">
+                <i class="fa-solid fa-film"></i>
+                <span>1080p MP4</span>
+              </button>
+              <button type="button" class="btn-download-opt" data-format="720">
+                <i class="fa-solid fa-video"></i>
+                <span>720p MP4</span>
+              </button>
+              <button type="button" class="btn-download-opt" data-format="mp3">
+                <i class="fa-solid fa-music"></i>
+                <span>MP3 Ses (320kbps)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="lab-footer-root"></div>
+  <div id="labToastContainer" class="lab-toast-container"></div>
+
+  <!-- Ortak Sistemler -->
+  <script src="labsnavbar.js"></script>
+  <script src="labsfooter.js"></script>
+  <script src="labs-core.js"></script>
+
+  <!-- Yalnızca Bu Aracın Modülü -->
+  <script type="module">
+    import { initDownloaderModule } from './modules/downloader.js';
+    document.addEventListener('DOMContentLoaded', initDownloaderModule);
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Görselden PDF Oluşturucu | BTÜ Geçerken Lab</title>
+  <meta name="description" content="JPG, PNG ve WebP formatındaki resimleri tek tıkla yüksek çözünürlüklü bir PDF belgesine dönüştürün.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23009B77'/%3E%3Cpath fill='%23ffffff' d='M7 2v2h1v5l-4.22 8.44C3.26 18.48 4 20 5.24 20h13.52c1.24 0 1.98-1.52 1.46-2.56L16 9V4h1V2H7zm3 2h4v5.5l1.5 3H8.5L10 9.5V4z'/%3E%3Ccircle cx='10.5' cy='16.5' r='1.2' fill='%2340E0D0'/%3E%3Ccircle cx='13.5' cy='15' r='0.9' fill='%2340E0D0'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Serif+TR:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="labsnavbar.css">
+  <link rel="stylesheet" href="labs.css">
+</head>
+<body>
+
+  <div id="lab-navbar-root"></div>
+
+  <main class="lab-shell">
+    <div class="lab-workspace-card">
+      <div class="lab-workspace-header">
+        <div>
+          <span class="section-label">PDF Stüdyosu // Görsel Belge</span>
+          <h2 class="lab-tool-heading">Görselden <em>PDF Oluşturucu</em></h2>
+        </div>
+        <span class="lab-head-pill"><i class="fa-solid fa-images"></i> JPG, PNG, WebP &rarr; PDF</span>
+      </div>
+
+      <div class="fc-converter-container">
+        <div class="fc-upload-zone" id="imgToPdfDropzone">
+          <input type="file" id="imgToPdfInput" accept="image/*" multiple hidden>
+          <div class="fc-upload-content">
+            <div class="fc-icon-bubble"><i class="fa-solid fa-images"></i></div>
+            <h3 class="fc-upload-title">Resimleri Seçin veya Sürükleyin</h3>
+            <p class="fc-upload-desc">JPG, PNG veya WebP resimlerinizi yükleyip albüm yapın</p>
+            <button type="button" class="btn-primary fc-choose-btn"><i class="fa-solid fa-photo-film"></i> Görselleri Seç</button>
+          </div>
+        </div>
+
+        <div class="fc-process-area" id="imgToPdfProcessArea" style="display: none;">
+          <div class="fc-table-header">
+            <span>Görsel</span>
+            <span>Boyut</span>
+            <span>Kaldır</span>
+          </div>
+          <div class="fc-file-list" id="imgToPdfList"></div>
+          <div class="fc-bottom-actions">
+            <button type="button" class="chip-btn" id="imgToPdfAddMoreBtn"><i class="fa-solid fa-plus"></i> Resim Ekle</button>
+            <button type="button" class="btn-primary" id="imgToPdfExecBtn"><i class="fa-solid fa-file-pdf"></i> Tek Bir PDF Olarak İndir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="lab-footer-root"></div>
+  <div id="labToastContainer" class="lab-toast-container"></div>
+
+  <!-- PDF-LIB Kütüphanesi -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+  <!-- Ortak Sistemler -->
+  <script src="labsnavbar.js"></script>
+  <script src="labsfooter.js"></script>
+  <script src="labs-core.js"></script>
+
+  <!-- Modül Başlatıcı -->
+  <script type="module">
+    import { initImgToPdf } from './modules/pdf-tools.js';
+    document.addEventListener('DOMContentLoaded', initImgToPdf);
+  </script>
+</body>
+</html>

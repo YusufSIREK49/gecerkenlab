@@ -1,0 +1,119 @@
+<!-- BTÜ Geçerken Lab - Kategorili Navbar Şablonu -->
+<header class="custom-navbar lab-navbar-custom">
+  <div class="nav-inner">
+    <!-- SOL: LOGO VE MARKA METNİ -->
+    <a href="index.html" class="nav-logo-wrap">
+      <div class="nav-logo-circle">
+        <i class="fa-solid fa-flask-vial"></i>
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-univ">BTÜ GEÇERKEN</span>
+        <div class="nav-logo-title-row">
+          <span class="nav-comm">LAB<em>S</em></span>
+          <span class="nav-beta-badge">BETA</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- SAĞ: KATEGORİLİ MENÜ VE AÇILIR LİSTELER -->
+    <nav id="main-nav" class="lab-nav-menu">
+      <button type="button" class="nav-link active" data-tab="tab-overview">
+        <i class="fa-solid fa-shapes"></i>
+        <span>Genel Bakış</span>
+      </button>
+
+      <!-- 1. PDF ARAÇLARI -->
+      <div class="nav-dropdown-wrap">
+        <button type="button" class="nav-link nav-dropdown-trigger">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>PDF Araçları</span>
+          <i class="fa-solid fa-chevron-down chevron"></i>
+        </button>
+        <div class="nav-dropdown-menu">
+          <button type="button" class="nav-dropdown-item" data-tab="tab-pdf-merge">
+            <i class="fa-solid fa-object-group"></i> PDF Birleştirici
+          </button>
+          <button type="button" class="nav-dropdown-item" data-tab="tab-pdf-split">
+            <i class="fa-solid fa-scissors"></i> PDF Sayfa Ayırıcı
+          </button>
+          <button type="button" class="nav-dropdown-item" data-tab="tab-img-to-pdf">
+            <i class="fa-solid fa-images"></i> Görselden PDF Yap
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. GÖRSEL & AI -->
+      <div class="nav-dropdown-wrap">
+        <button type="button" class="nav-link nav-dropdown-trigger">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Görsel &amp; AI</span>
+          <i class="fa-solid fa-chevron-down chevron"></i>
+        </button>
+        <div class="nav-dropdown-menu">
+          <button type="button" class="nav-dropdown-item" data-tab="tab-bg-remover">
+            <i class="fa-solid fa-eraser"></i> AI Arka Plan Temizle
+          </button>
+          <button type="button" class="nav-dropdown-item" data-tab="tab-upscaler">
+            <i class="fa-solid fa-maximize"></i> AI Upscaler
+          </button>
+          <button type="button" class="nav-dropdown-item" data-tab="tab-resizer">
+            <i class="fa-solid fa-compress"></i> Akıllı Downscaler
+          </button>
+          <button type="button" class="nav-dropdown-item" data-tab="tab-batch-webp">
+            <i class="fa-solid fa-bolt"></i> Toplu WebP Dönüştür
+          </button>
+          <button type="button" class="nav-dropdown-item" data-tab="tab-svg-opt">
+            <i class="fa-solid fa-bezier-curve"></i> SVG Optimizer
+          </button>
+          <button type="button" class="nav-dropdown-item" data-tab="tab-ico-maker">
+            <i class="fa-solid fa-icons"></i> ICO Paketi Oluşturucu
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. MEDYA & DÖNÜŞÜM -->
+      <div class="nav-dropdown-wrap">
+        <button type="button" class="nav-link nav-dropdown-trigger">
+          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+          <span>Medya &amp; Dönüşüm</span>
+          <i class="fa-solid fa-chevron-down chevron"></i>
+        </button>
+        <div class="nav-dropdown-menu">
+          <button type="button" class="nav-dropdown-item" data-tab="tab-converter">
+            <i class="fa-solid fa-repeat"></i> Evrensel Dönüştürücü
+          </button>
+          <button type="button" class="nav-dropdown-item" data-tab="tab-downloader">
+            <i class="fa-solid fa-cloud-arrow-down"></i> Medya İndirici
+          </button>
+        </div>
+      </div>
+
+      <!-- 4. PRATİK ARAÇLAR -->
+      <div class="nav-dropdown-wrap">
+        <button type="button" class="nav-link nav-dropdown-trigger">
+          <i class="fa-solid fa-toolbox"></i>
+          <span>Pratik Araçlar</span>
+          <i class="fa-solid fa-chevron-down chevron"></i>
+        </button>
+        <div class="nav-dropdown-menu">
+          <button type="button" class="nav-dropdown-item" data-tab="tab-qr-maker">
+            <i class="fa-solid fa-qrcode"></i> QR Kod Oluşturucu
+          </button>
+          <button type="button" class="nav-dropdown-item" data-tab="tab-exif-cleaner">
+            <i class="fa-solid fa-shield-halved"></i> EXIF &amp; Meta Temizle
+          </button>
+          <button type="button" class="nav-dropdown-item" data-tab="tab-bulk-rename">
+            <i class="fa-solid fa-i-cursor"></i> Toplu Yeniden Adlandır
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MOBİL MENÜ BUTONU -->
+    <button id="mobile-menu-btn" aria-label="Menüyü Aç/Kapat">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>

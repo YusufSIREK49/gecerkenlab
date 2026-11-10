@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favicon &amp; ICO Paketi Oluşturucu | BTÜ Geçerken Lab</title>
+  <meta name="description" content="Logonuzdan tüm platformlar için standart boyutlarda çoklu favicon ve ICO paketi oluşturun.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23009B77'/%3E%3Cpath fill='%23ffffff' d='M7 2v2h1v5l-4.22 8.44C3.26 18.48 4 20 5.24 20h13.52c1.24 0 1.98-1.52 1.46-2.56L16 9V4h1V2H7zm3 2h4v5.5l1.5 3H8.5L10 9.5V4z'/%3E%3Ccircle cx='10.5' cy='16.5' r='1.2' fill='%2340E0D0'/%3E%3Ccircle cx='13.5' cy='15' r='0.9' fill='%2340E0D0'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Serif+TR:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="labsnavbar.css">
+  <link rel="stylesheet" href="labs.css">
+</head>
+<body>
+
+  <div id="lab-navbar-root"></div>
+
+  <main class="lab-shell">
+    <div class="lab-workspace-card">
+      <div class="lab-workspace-header">
+        <div>
+          <span class="section-label">Görsel &amp; AI // Favicon Paketi</span>
+          <h2 class="lab-tool-heading">ICO &amp; Favicon <em>Paketi</em></h2>
+        </div>
+        <span class="lab-head-pill"><i class="fa-solid fa-icons"></i> 16x16 / 32x32 / 48x48 / 64x64</span>
+      </div>
+
+      <div class="lab-split-workspace">
+        <div class="lab-dropzone" id="icoDropzone">
+          <input type="file" id="icoInput" accept="image/*" hidden>
+          <div class="dropzone-center">
+            <div class="drop-circle"><i class="fa-solid fa-icons"></i></div>
+            <p class="drop-lead">Favicon Yapılacak Logoyu Yükleyin</p>
+            <span class="drop-hint">PNG, WebP veya JPG logonuz</span>
+          </div>
+          <div class="dropzone-preview lab-checkerboard-wrap" id="icoPreviewWrap" style="display:none;">
+            <img id="icoPreviewImg" src="" alt="Önizleme">
+            <button type="button" class="btn-clear-file" id="icoClearBtn"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+
+        <div class="lab-controls-pane">
+          <h4 class="pane-title"><i class="fa-solid fa-sliders"></i> Çıktı Seçenekleri</h4>
+          <p class="pane-note">Tarayıcılar, Google arama sonuçları ve mobil cihazlar için standart 16px'den 512px'e kadar tüm PNG ikonlar ve `favicon.ico` tek pakette derlenir.</p>
+          <div class="action-footer">
+            <button type="button" class="btn-primary w-100" id="icoExecBtn">
+              <i class="fa-solid fa-download"></i> Favicon Paketini (ZIP) İndir
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="lab-footer-root"></div>
+  <div id="labToastContainer" class="lab-toast-container"></div>
+
+  <!-- ZIP Kütüphanesi -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <!-- Ortak Sistemler -->
+  <script src="labsnavbar.js"></script>
+  <script src="labsfooter.js"></script>
+  <script src="labs-core.js"></script>
+
+  <!-- Modül Başlatıcı -->
+  <script type="module">
+    import { initIcoMaker } from './modules/image-tools.js';
+    document.addEventListener('DOMContentLoaded', initIcoMaker);
+  </script>
+</body>
+</html>
